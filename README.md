@@ -21,9 +21,21 @@ a terminal chess engine written in c using ncurses.
 
 ## building
 
-**linux (requires ncursesw):**
+**debian / ubuntu:**
 ```
 sudo apt install libncursesw5-dev
+make
+```
+
+**arch / manjaro:**
+```
+sudo pacman -S ncurses
+make
+```
+
+**fedora / rhel:**
+```
+sudo dnf install ncurses-devel
 make
 ```
 

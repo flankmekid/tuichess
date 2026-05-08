@@ -5,8 +5,10 @@
 #include <ncursesw/ncurses.h>
 #elif defined(_WIN32)
 #include <pdcurses/curses.h>
-#else
+#elif __has_include(<ncursesw/ncurses.h>)
 #include <ncursesw/ncurses.h>
+#else
+#include <ncurses.h>
 #endif
 
 #endif
