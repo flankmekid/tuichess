@@ -43,7 +43,7 @@ void handleInput(GameState *gs, int ch) {
         case KEY_LEFT:  case 'h': moveCursor(gs,  0, -1); break;
         case KEY_RIGHT: case 'l': moveCursor(gs,  0,  1); break;
 
-        case '\n': case '\r':
+        case '\n': case '\r': case ' ':
             selectSquare(gs);
             break;
 

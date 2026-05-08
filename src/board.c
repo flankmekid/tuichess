@@ -89,6 +89,10 @@ UndoInfo applyMove(Board *b, Move m) {
     if (moving == W_ROOK && m.fromRow == 7 && m.fromCol == 0) b->castleRights &= ~CASTLE_WQ;
     if (moving == B_ROOK && m.fromRow == 0 && m.fromCol == 7) b->castleRights &= ~CASTLE_BK;
     if (moving == B_ROOK && m.fromRow == 0 && m.fromCol == 0) b->castleRights &= ~CASTLE_BQ;
+    if (u.capturedPiece == W_ROOK && m.toRow == 7 && m.toCol == 7) b->castleRights &= ~CASTLE_WK;
+    if (u.capturedPiece == W_ROOK && m.toRow == 7 && m.toCol == 0) b->castleRights &= ~CASTLE_WQ;
+    if (u.capturedPiece == B_ROOK && m.toRow == 0 && m.toCol == 7) b->castleRights &= ~CASTLE_BK;
+    if (u.capturedPiece == B_ROOK && m.toRow == 0 && m.toCol == 0) b->castleRights &= ~CASTLE_BQ;
 
     if (!isEmpty(u.capturedPiece) || moving == W_PAWN || moving == B_PAWN)
         b->halfMoveClock = 0;
